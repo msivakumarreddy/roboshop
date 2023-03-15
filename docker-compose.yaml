@@ -29,6 +29,14 @@ services:
     container_name: user
     depends_on:
     - redis
+  mysqL:
+    image: mysql:v1
+    container_name: mysql
+  shipping:
+    image: shipping:v1
+    container_name: shipping
+    depends_on:
+    - mysql
 networks:
   roboshop:
     driver: bridge
