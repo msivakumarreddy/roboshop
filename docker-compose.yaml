@@ -1,0 +1,9 @@
+version: "2"
+services:
+  mongodb:
+    image: mongodb:v1
+    container_name: mongodb 
+
+networks:
+  roboshop:
+    driver: bridge
