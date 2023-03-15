@@ -8,8 +8,7 @@ ENV MYSQL_ALLOW_EMPTY_PASSWORD=yes \
     MYSQL_PASSWORD=secret
 
 # change datadir entry in /etc/mysql/my.cnf
-COPY config.sh /root/
-RUN sh /root/config.sh
+
 
 COPY scripts/* /docker-entrypoint-initdb.d/
 
