@@ -6,7 +6,11 @@ services:
   catalogue:
     image: catalogue:v1
     container_name: catalogue
-
+  web:
+    image: web:v1
+    container_name: web
+    ports:
+    - "80:80"
 networks:
   roboshop:
     driver: bridge
