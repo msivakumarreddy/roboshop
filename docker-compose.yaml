@@ -13,6 +13,9 @@ services:
     - "80:80"
   redis:
     image: redis
+  cart:
+    image: cart:v1
+    container_name: cart
 networks:
   roboshop:
     driver: bridge
