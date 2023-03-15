@@ -6,9 +6,14 @@ services:
   catalogue:
     image: catalogue:v1
     container_name: catalogue
+    depends_on:
+    - redis
   web:
     image: web:v1
     container_name: web
+    depends_on:
+    - catalogue
+    - cart
     ports:
     - "80:80"
   redis:
@@ -16,6 +21,9 @@ services:
   cart:
     image: cart:v1
     container_name: cart
+    depends_on:
+    - catalogue
+    - redis
 networks:
   roboshop:
     driver: bridge
