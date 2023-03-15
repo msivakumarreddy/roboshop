@@ -11,6 +11,8 @@ services:
     container_name: web
     ports:
     - "80:80"
+  redis:
+    image: redis
 networks:
   roboshop:
     driver: bridge
