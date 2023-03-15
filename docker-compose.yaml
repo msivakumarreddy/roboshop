@@ -24,6 +24,11 @@ services:
     depends_on:
     - catalogue
     - redis
+  user:
+    image: user:v1
+    container_name: user
+    depends_on:
+    - redis
 networks:
   roboshop:
     driver: bridge
