@@ -25,7 +25,7 @@ services:
     volumes:
     - redis:/data
   cart:
-    image: cart:v1
+    image: cart:v2
     container_name: cart
     depends_on:
     - catalogue
