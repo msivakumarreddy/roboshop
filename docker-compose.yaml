@@ -22,6 +22,8 @@ services:
   redis:
     image: redis
     container_name: redis
+    volumes:
+    - redis:/data
   cart:
     image: cart:v1
     container_name: cart
@@ -36,6 +38,8 @@ services:
   mysql:
     image: mysql:v1
     container_name: mysql
+    volumes:
+    - mysql:/var/lib/mysql
   shipping:
     image: shipping:v1
     container_name: shipping
@@ -44,6 +48,8 @@ services:
   rabbitmq:
     image: rabbitmq:3.7-management-alpine
     container_name: rabbitmq
+    volumes:
+    - rabbitmq:/var/lib/rabbitmq
   payment:
     image: payment:v1
     container_name: payment
@@ -69,3 +75,21 @@ volumes:
       type: 'none'
       o: 'bind'
       device: '/home/ec2-user/mongodb'
+  mysql:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/ec2-user/mysql'
+  redis:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/ec2-user/redis'
+  rabbitmq:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/ec2-user/rabbitmq'
