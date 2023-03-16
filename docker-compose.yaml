@@ -6,7 +6,7 @@ services:
     volumes:
     - mongodb:/data/db
   catalogue:
-    image: catalogue:v1
+    image: catalogue:v2
     container_name: catalogue
     depends_on:
     - redis
