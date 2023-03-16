@@ -47,6 +47,11 @@ services:
     container_name: payment
     depends_on:
     - rabbitmq
+  payment:
+    image: ratings:v1
+    container_name: ratings
+    depends_on:
+    - mysql
 networks:
   roboshop:
     driver: bridge
