@@ -1,7 +1,7 @@
 version: "2"
 services:
   mongodb:
-    image: mongodb:v1
+    image: mongo:v1
     container_name: mongodb
   catalogue:
     image: catalogue:v1
