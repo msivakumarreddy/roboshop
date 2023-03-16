@@ -52,6 +52,11 @@ services:
     container_name: ratings
     depends_on:
     - mysql
+  dispatch:
+    image: dispatch:v1
+    container_name: dispatch
+    depends_on:
+    - rabbitmq
 networks:
   roboshop:
     driver: bridge
