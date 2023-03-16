@@ -3,6 +3,8 @@ services:
   mongodb:
     image: mongo:v1
     container_name: mongodb
+    volumes:
+    - mongodb:/data/db
   catalogue:
     image: catalogue:v1
     container_name: catalogue
@@ -60,3 +62,10 @@ services:
 networks:
   roboshop:
     driver: bridge
+volumes:
+  mongodb:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/ec2-user/mongodb'
