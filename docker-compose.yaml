@@ -18,7 +18,7 @@ services:
     - "80:80"
   redis:
     image: redis
-    container_name: web
+    container_name: redis
   cart:
     image: cart:v1
     container_name: cart
